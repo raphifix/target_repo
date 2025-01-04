@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: raphifix/source_repo # Replace with the owner and repository of the template repo
-          path: template-repo
+          path: source_repo
 
       - name: Create PR template file
         uses: actions/create-file@v3

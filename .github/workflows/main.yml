@@ -1,0 +1,26 @@
+name: Create PR Template
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  create-pr-template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@v3
+
+      - name: Checkout template repository
+        uses: actions/checkout@v3
+        with:
+          repository: raphifix/source_repo # Replace with the owner and repository of the template repo
+          path: template-repo
+
+      - name: Create PR template file
+        uses: actions/create-file@v3
+        with:
+          path: .github/PULL_REQUEST_TEMPLATE.md
+          message: "Create PR template"
+          content: |
+            $(cat template-repo/your_template_file.md) 

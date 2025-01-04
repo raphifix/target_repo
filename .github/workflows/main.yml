@@ -2,7 +2,7 @@ name: Create PR Template
 
 on:
   pull_request:
-    types: [opened]
+    branches: [main]
 
 jobs:
   create-pr-template:
